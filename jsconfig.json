@@ -1,0 +1,10 @@
+// jsconfig.json
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./react-src/*"] // Mapea @/ a react-src/
+      }
+    },
+    "exclude": ["node_modules", "dist"] // Excluye carpetas
+  }

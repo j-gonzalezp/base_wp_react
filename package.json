@@ -5,9 +5,9 @@
     "main": "react-src/index.jsx",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "npx webpack --mode=production", 
-        "watch": "npx webpack --mode=development --watch" 
-      },
+        "build": "npx webpack --mode=production",
+        "watch": "npx webpack --mode=development --watch"
+    },
     "keywords": [],
     "author": "",
     "license": "ISC",
@@ -17,12 +17,30 @@
         "@babel/preset-react": "^7.27.1",
         "@types/react": "^18.2.14",
         "@types/react-dom": "^18.2.6",
+        "autoprefixer": "^10.4.21",
         "babel-loader": "^9.2.1",
+        "css-loader": "^7.1.2",
+        "postcss": "^8.5.3",
+        "postcss-loader": "^8.1.1",
+        "style-loader": "^4.0.0",
+        "tailwindcss": "3.3",
+        "tailwindcss-animate": "^1.0.7",
         "webpack": "^5.99.7",
         "webpack-cli": "^5.1.4"
     },
     "dependencies": {
+        "@radix-ui/react-dialog": "^1.1.11",
+        "@radix-ui/react-dropdown-menu": "^2.1.12",
+        "@radix-ui/react-label": "^2.1.4",
+        "@radix-ui/react-navigation-menu": "^1.2.10",
+        "@radix-ui/react-separator": "^1.1.4",
+        "@radix-ui/react-slot": "^1.2.0",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
+        "lucide-react": "^0.507.0",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^7.5.3",
+        "tailwind-merge": "^3.2.0"
     }
 }

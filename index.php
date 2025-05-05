@@ -3,29 +3,30 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php wp_title(); ?></title>
+    <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title> <!-- Título más estándar -->
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <?php wp_body_open(); // Para compatibilidad con hooks ?>
+    <?php wp_body_open(); ?>
 
-    <header>
-        <h1><?php bloginfo('name'); ?></h1>
-        <p><?php bloginfo('description'); ?></p>
-    </header>
+    <?php // Podrías incluir un header PHP aquí si quieres uno global NO manejado por React ?>
+    <!-- <header> -->
+        <!-- Contenido del header PHP -->
+    <!-- </header> -->
 
-    <main>
+    <main id="primary" class="site-main">
         <!-- Este es el div donde React montará tu aplicación -->
+        <!-- El ID coincide con tu react-src/index.jsx -->
         <div id="react-app-root">
-            <!-- Puedes dejarlo vacío o poner un mensaje de carga inicial -->
-            Cargando contenido interactivo...
+            <!-- Mensaje de carga inicial (React lo reemplazará) -->
+            <p style="text-align: center; padding: 2em;">Cargando aplicación...</p>
         </div>
-
     </main>
 
-    <footer>
-        <p>© <?php echo date("Y"); ?> <?php bloginfo('name'); ?></p>
-    </footer>
+    <?php // Podrías incluir un footer PHP aquí ?>
+    <!-- <footer> -->
+        <!-- Contenido del footer PHP -->
+    <!-- </footer> -->
 
     <?php wp_footer(); ?>
 </body>

@@ -1,0 +1,196 @@
+/* react-src/styles/globals.css - Adaptado para Gobierno de Chile (IDEMBN) */
+
+/* 1. Importar Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap');
+
+/* 2. Directivas Tailwind Estándar */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3. Definiciones Base y Variables CSS */
+@layer base {
+  /* --- Definición de Variables CSS --- */
+  :root {
+    /* Colores Institucionales - Gobierno de Chile */
+    --color-azul-institucional: 196 64% 38%;
+    --color-rojo-chile: 358 75% 36%;
+    --color-azul-marino: 215 68% 15%;
+    --color-turquesa-claro: 185 55% 65%;
+    --color-gris-azulado: 210 10% 92%;
+    --color-gris-neutro: 210 10% 45%;
+    --color-amarillo-institucional: 48 80% 50%;
+    --color-verde-exito: 145 63% 40%;
+    --color-rojo-alerta: 358 75% 50%;
+    --color-azul-info: 196 85% 54%;
+
+    /* Mapeo a variables de shadcn/ui - Tema Claro por defecto */
+    --background: 0 0% 100%;                    /* Blanco */
+    --foreground: var(--color-azul-marino);     /* Azul Marino Oscuro */
+    --muted: var(--color-gris-azulado);         /* Gris Azulado para fondos sutiles */
+    --muted-foreground: var(--color-gris-neutro); /* Gris Neutro para textos secundarios */
+    --popover: 0 0% 100%;                       /* Blanco */
+    --popover-foreground: var(--color-azul-marino);
+    --card: 0 0% 100%;                          /* Blanco */
+    --card-foreground: var(--color-azul-marino);
+    --border: 210 20% 80%;                      /* Gris azulado más claro para bordes */
+    --input: 210 20% 80%;                       /* Igual que border */
+    --primary: var(--color-azul-institucional); /* Azul Institucional principal */
+    --primary-foreground: 0 0% 100%;            /* Blanco para texto sobre azul */
+    --secondary: var(--color-gris-azulado);     /* Gris Azulado para fondos secundarios */
+    --secondary-foreground: var(--color-azul-marino); /* Azul Marino para texto */
+    --accent: var(--color-turquesa-claro);      /* Turquesa Claro para acentos */
+    --accent-foreground: var(--color-azul-marino); /* Azul Marino para texto sobre turquesa */
+    --destructive: var(--color-rojo-chile);     /* Rojo Chile para destructivo */
+    --destructive-foreground: 0 0% 100%;        /* Blanco para texto sobre rojo */
+    --success: var(--color-verde-exito);        /* Verde Éxito */
+    --warning: var(--color-amarillo-institucional); /* Amarillo */
+    --info: var(--color-azul-info);             /* Azul Info */
+    --ring: var(--color-azul-institucional);    /* Azul Institucional para anillos de foco */
+    --radius: 0.375rem;                         /* Radio de borde estándar (6px) */
+
+    /* Definición de Fuentes */
+    --font-sans: "Nunito Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-heading: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  /* Definiciones para .dark (Tema Oscuro) */
+  .dark {
+    color-scheme: dark;
+    --background: var(--color-azul-marino);
+    --foreground: 210 20% 98%;
+    --muted: 215 30% 25%;
+    --muted-foreground: 210 20% 80%;
+    --popover: 215 50% 12%;
+    --popover-foreground: 210 20% 98%;
+    --card: 215 50% 12%;
+    --card-foreground: 210 20% 98%;
+    --border: 215 30% 25%;
+    --input: 215 30% 25%;
+    --primary: var(--color-turquesa-claro);
+    --primary-foreground: var(--color-azul-marino);
+    --secondary: 215 30% 20%;
+    --secondary-foreground: 210 20% 98%;
+    --accent: var(--color-azul-institucional);
+    --accent-foreground: 210 20% 98%;
+    --destructive: var(--color-rojo-alerta);
+    --destructive-foreground: 210 20% 98%;
+    --success: 145 63% 50%;
+    --warning: 48 90% 60%;
+    --info: 196 90% 60%;
+    --ring: var(--color-turquesa-claro);
+  }
+
+  /* --- Aplicación de Estilos Base --- */
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    min-height: 100vh;
+    font-weight: 400;
+    line-height: 1.65;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body ::selection {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  /* Estilos para encabezados usando Montserrat */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: hsl(var(--foreground));
+    line-height: 1.2;
+    margin-bottom: 0.75em;
+  }
+  h1 { font-size: 2.25rem; font-weight: 800; }
+  h2 { font-size: 1.875rem; font-weight: 700; }
+  h3 { font-size: 1.5rem; font-weight: 700; }
+  h4 { font-size: 1.25rem; font-weight: 600; }
+  h5 { font-size: 1.125rem; font-weight: 600; }
+  h6 { font-size: 1rem; font-weight: 600; }
+
+  /* Estilos para párrafos */
+  p {
+    color: hsl(var(--foreground));
+    margin-bottom: 1.5rem;
+  }
+
+  /* Estilos para enlaces */
+  a:not(.unstyled) {
+    color: hsl(var(--primary));
+    font-weight: 600;
+    text-decoration-line: none;
+    transition: all 0.2s ease;
+    border-radius: 0.125rem;
+  }
+  a:not(.unstyled):hover {
+    color: hsl(var(--primary) / 0.8);
+    text-decoration: underline;
+  }
+
+  /* Estilos de Foco */
+  *:focus-visible {
+    outline-style: none;
+    box-shadow: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(var(--ring));
+    border-radius: var(--radius);
+  }
+
+  /* Estilos para input number */
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type='number'] { -moz-appearance: textfield; }
+
+  /* Clases de utilidad adicionales */
+  .text-primary { color: hsl(var(--primary)); }
+  .text-secondary { color: hsl(var(--muted-foreground)); }
+  .bg-gobierno { background-color: hsl(var(--color-azul-institucional)); color: white; }
+  .bg-chile { background-color: hsl(var(--color-rojo-chile)); color: white; }
+  .border-gobierno { border-color: hsl(var(--color-azul-institucional)); }
+  .border-chile { border-color: hsl(var(--color-rojo-chile)); }
+}
+
+/* Media Query Movimiento Reducido */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Componentes personalizados */
+@layer components {
+  .btn-gobierno { @apply bg-gobierno text-white px-4 py-2 rounded-md font-medium hover:opacity-90 transition-opacity; }
+  .btn-secundario { @apply bg-white border border-gobierno text-primary px-4 py-2 rounded-md font-medium hover:bg-muted transition-colors; }
+
+  /* CORRECCIÓN AQUÍ: Usar variables CSS directamente, no @apply para bg-card */
+  .tarjeta {
+    background-color: hsl(var(--card));
+    @apply rounded-lg border p-4 shadow-sm; /* Mantener el resto con @apply */
+  }
+
+  /* CORRECCIÓN AQUÍ: Usar variables CSS directamente */
+  .tarjeta-destacada {
+    background-color: hsl(var(--card));
+    border-left-color: hsl(var(--primary)); /* Aplicar color primario al borde izquierdo */
+    @apply rounded-lg border-l-4 p-4 shadow-sm; /* Mantener el resto con @apply */
+    border-width: 1px; /* Añadir borde general si es necesario */
+    border-left-width: 4px; /* Asegurar grosor izquierdo */
+  }
+}
