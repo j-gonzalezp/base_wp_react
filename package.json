@@ -1,0 +1,28 @@
+{
+    "name": "mi-tema",
+    "version": "1.0.0",
+    "description": "",
+    "main": "react-src/index.jsx",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "npx webpack --mode=production", 
+        "watch": "npx webpack --mode=development --watch" 
+      },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.27.1",
+        "@babel/preset-env": "^7.27.1",
+        "@babel/preset-react": "^7.27.1",
+        "@types/react": "^18.2.14",
+        "@types/react-dom": "^18.2.6",
+        "babel-loader": "^9.2.1",
+        "webpack": "^5.99.7",
+        "webpack-cli": "^5.1.4"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    }
+}
